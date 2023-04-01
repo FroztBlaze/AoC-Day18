@@ -1,1 +1,20 @@
-This logsheet will be updated after every commit with the work and my thoughts.
+This logsheet will be updated after every major commit with the work and my thoughts.
+
+Log #1:
+My objective is to do this in the most efficient way possible.
+
+Prior to starting coding, I had a thought about the strategy. Here is what I came up with:
+	- Loop through the list of cube coordinates
+	- At each cube, check whether the neighbouring cubes are in the list of cubes
+	- Each time no cube is neighbouring, add one to the counter of exposed sides.
+	
+There are two pitfalls I have thought about:
+	- I am unsure how I can avoid checking the same direction twice.
+	- The above method does not work for hollow objects since it will count the inner exposed 
+	  surface area as well as the outer exposed surface area. My understanding of this problem is
+	  that we want the outer exposed area only, but I will implement this additional functionality
+	  only if necessary, after the original problem is solved.
+	  
+First idea to avoid repeating checks:
+	- If a block is right next to another block, the next block to be analyzed will be adjacent to the original block.
+	- There will be two lists. One list of the remaining blocks to be analyzed, and one list of all of the blocks.
