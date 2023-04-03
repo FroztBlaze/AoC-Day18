@@ -39,4 +39,48 @@ namespace Utils {
 		return result;
 	}
 
+	std::vector<std::array<int,3>> read_input(const std::string& filename) {
+		// Reads an input file with name given by 'filename'. The variable 'filename'
+		// should include the file extension.
+
+		// Initialize the result
+		std::vector<std::array<int, 3>> result;
+
+		// Open the file containing the designs
+		std::string filepath = "../inputs/" + filename;
+		std::ifstream ifile(filepath);
+
+		// Check whether the file is open
+		if (ifile.is_open()) {
+
+			// Initialise a string to store the lines in
+			std::string temp_line;
+
+			// Read all lines
+			while (std::getline(ifile, temp_line)) {
+
+				std::array<int, 3> temp_coords;
+				
+				// Split the current line
+				std::vector<std::string> split_line = split_line_csv(temp_line);
+
+				// Convert the string coordinates to ints
+				for (int i = 0; i < 3; i++) {
+					temp_coords[i] = std::stoi(split_line[i]);
+				}
+
+				// Save these coordinates
+				result.push_back(temp_coords);
+			}
+
+			// Close the design file and clear the relevant vectors
+			ifile.close();
+		}
+		else {
+			std::cout << "\nUNABLE TO OPEN INPUT FILE\n";
+		}
+
+		return result;
+	}
+
 }
