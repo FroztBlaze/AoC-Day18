@@ -1,5 +1,7 @@
 This logsheet will be updated after every major commit with the work and my thoughts.
 
+
+
 Log #1:
 My objective is to do this in the most efficient way possible.
 
@@ -18,3 +20,13 @@ There are two pitfalls I have thought about:
 First idea to avoid repeating checks:
 	- If a block is right next to another block, the next block to be analyzed will be adjacent to the original block.
 	- There will be two lists. One list of the remaining blocks to be analyzed, and one list of all of the blocks.
+	
+
+
+Log #2 (Mon 3rd April 2023):
+	- I wrote a function that is able to split a line from a file in ".CSV" format, which is what the input data is 
+	  saved as.
+	- I wrote a unit test for that function that runs within "main". (If necessary, I could switch to GoogleTest later).
+	- I wrote a function that is able to read an input file in the required format. I also wrote a test for this.
+	- The second test lead to a bugfix in "split_csv_test()".
+	- With tests passing, utils should be finished. This code is now cleared to be merged with "master".
