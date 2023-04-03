@@ -16,16 +16,24 @@ namespace Utils {
 
 		// Loop through each character in the string
 		for (size_t end_idx = 0; end_idx < line.size(); end_idx++) {
+			bool comma_encountered = (line[end_idx] == ',');
+			bool end_encountered = (end_idx == line.size() - 1);
 
-			// If a comma is reached or the end of the string is reached, save a substring
-			if ((line[end_idx] == ',') || (end_idx == line.size() - 1)) {
+			// If a comma is reached or the end of the line is reached, save a substring
+			if (comma_encountered || end_encountered) {
 
 				// Calculate the length of the substring
 				length = end_idx - start_idx;
-
-				if (length == 0) {
-					// Store an empty string if the start index and the end index coincide
+				
+				if (comma_encountered && end_encountered) {
+					// If the end of the line is a comma, return an additional empty string
+					result.push_back(line.substr(start_idx, length));
 					result.push_back("");
+				}
+				else if ((length == 0) && end_encountered) {
+					// If the end of the line is not a comma and the length is zero, return
+					// the last character as the final string
+					result.push_back(line.substr(start_idx, 1));
 				}
 				else {
 					result.push_back(line.substr(start_idx, length));
