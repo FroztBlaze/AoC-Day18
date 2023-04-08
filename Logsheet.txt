@@ -30,3 +30,12 @@ Log #2 (Mon 3rd April 2023):
 	- I wrote a function that is able to read an input file in the required format. I also wrote a test for this.
 	- The second test lead to a bugfix in "split_csv_test()".
 	- With tests passing, utils should be finished. This code is now cleared to be merged with "master".
+
+
+
+Log #3 (Sat 8th April 2023):
+	- Rebased some code for clarity
+	- Changed the format of the coordinate container from an std::vector to an std::set because searching the latter is 
+	  O(logn) while searching the former is O(n). See: https://stackoverflow.com/a/3451045
+	- Attempted a solution that counts all of the neighbours of each block to determine how many free sides each block has.
+	  This works for the long test case given, but not for the actual input and I do not know why.
