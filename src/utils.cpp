@@ -91,4 +91,14 @@ namespace Utils {
 		return result;
 	}
 
+	Coords3D add_coords(const Coords3D& coord1, const Coords3D& coord2) {
+		// Add the elements of two coordinates
+		Coords3D result = { 0, 0, 0 };
+
+		result[0] = coord1[0] + coord2[0];
+		result[1] = coord1[1] + coord2[1];
+		result[2] = coord1[2] + coord2[2];
+
+		return result;
+	}
 }

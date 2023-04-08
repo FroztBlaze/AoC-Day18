@@ -21,6 +21,8 @@ namespace Utils {
 	// should include the file extension.
 	std::set<Coords3D> read_input(const std::string& filename);
 
+	// Add the elements of two coordinates
+	Coords3D add_coords(const Coords3D& coord1, const Coords3D& coord2);
 }
 
 #endif
