@@ -47,12 +47,12 @@ namespace Utils {
 		return result;
 	}
 
-	std::vector<std::array<int,3>> read_input(const std::string& filename) {
+	std::vector<Coords3D> read_input(const std::string& filename) {
 		// Reads an input file with name given by 'filename'. The variable 'filename'
 		// should include the file extension.
 
 		// Initialize the result
-		std::vector<std::array<int, 3>> result;
+		std::vector<Coords3D> result;
 
 		// Open the file containing the designs
 		std::string filepath = "../inputs/" + filename;
@@ -67,7 +67,7 @@ namespace Utils {
 			// Read all lines
 			while (std::getline(ifile, temp_line)) {
 
-				std::array<int, 3> temp_coords;
+				Coords3D temp_coords;
 				
 				// Split the current line
 				std::vector<std::string> split_line = split_line_csv(temp_line);

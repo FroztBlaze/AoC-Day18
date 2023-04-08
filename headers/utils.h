@@ -7,6 +7,8 @@
 #include <vector>
 #include <array>
 
+typedef std::array<int, 3> Coords3D;
+
 namespace Utils {
 
 	// Splits a string in csv format.
@@ -16,7 +18,7 @@ namespace Utils {
 
 	// Reads an input file with name given by 'filename'. The variable 'filename'
 	// should include the file extension.
-	std::vector<std::array<int, 3>> read_input(const std::string& filename);
+	std::vector<Coords3D> read_input(const std::string& filename);
 
 }
 
