@@ -41,6 +41,8 @@ size_t solve_problem() {
 		result += local_exposed_faces;
 	}
 
+	std::cout << "\nThe result is " << result << "\n";
+
 	return result;
 }
 
