@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <set>
 #include <array>
 
 typedef std::array<int, 3> Coords3D;
@@ -18,7 +19,7 @@ namespace Utils {
 
 	// Reads an input file with name given by 'filename'. The variable 'filename'
 	// should include the file extension.
-	std::vector<Coords3D> read_input(const std::string& filename);
+	std::set<Coords3D> read_input(const std::string& filename);
 
 }
 

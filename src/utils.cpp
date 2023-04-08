@@ -47,12 +47,12 @@ namespace Utils {
 		return result;
 	}
 
-	std::vector<Coords3D> read_input(const std::string& filename) {
+	std::set<Coords3D> read_input(const std::string& filename) {
 		// Reads an input file with name given by 'filename'. The variable 'filename'
 		// should include the file extension.
 
 		// Initialize the result
-		std::vector<Coords3D> result;
+		std::set<Coords3D> result;
 
 		// Open the file containing the designs
 		std::string filepath = "../inputs/" + filename;
@@ -78,7 +78,7 @@ namespace Utils {
 				}
 
 				// Save these coordinates
-				result.push_back(temp_coords);
+				result.insert(temp_coords);
 			}
 
 			// Close the design file and clear the relevant vectors
