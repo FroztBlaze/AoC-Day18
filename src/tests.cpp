@@ -17,13 +17,13 @@ bool split_csv_test() {
 }
 
 bool read_input_test() {
-	std::array<int, 3> first{ 1,2,3 };
-	std::array<int, 3> second{ 4,5,6 };
-	std::array<int, 3> third{ 7,8,9 };
-	std::vector<std::array<int, 3>> desired_output{ first, second, third };
+	Coords3D first{ 1,2,3 };
+	Coords3D second{ 4,5,6 };
+	Coords3D third{ 7,8,9 };
+	std::set<Coords3D> desired_output{ first, second, third };
 
 	std::string filename("reader_test.csv");
-	std::vector<std::array<int, 3>> output = Utils::read_input(filename);
+	std::set<Coords3D> output = Utils::read_input(filename);
 
 	if (desired_output == output) {
 		std::cout << "read_input_test: PASSED.\n";
